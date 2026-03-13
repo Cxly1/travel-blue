@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CountAnimation } from "@/components/ui/count-animation";
+import { SlidingNumber } from "@/components/ui/sliding-number";
 import { IconPaw, IconPlane, IconWorld, IconStar } from "@tabler/icons-react";
+import { InViewStagger, inViewChildVariants } from "@/components/ui/in-view";
 
 const stats = [
   {
@@ -12,6 +13,8 @@ const stats = [
     label: "Mascotas certificadas",
     icon: IconPaw,
     decimals: 0,
+    iconColor: "text-accent-sky",
+    iconBg: "bg-accent-sky/10",
   },
   {
     value: 15,
@@ -20,6 +23,8 @@ const stats = [
     label: "Aerolineas compatibles",
     icon: IconPlane,
     decimals: 0,
+    iconColor: "text-accent-blue",
+    iconBg: "bg-accent-blue/10",
   },
   {
     value: 100,
@@ -28,6 +33,8 @@ const stats = [
     label: "Validez internacional",
     icon: IconWorld,
     decimals: 0,
+    iconColor: "text-accent-green",
+    iconBg: "bg-accent-green/10",
   },
   {
     value: 4.9,
@@ -36,6 +43,8 @@ const stats = [
     label: "Calificacion promedio",
     icon: IconStar,
     decimals: 1,
+    iconColor: "text-accent-teal",
+    iconBg: "bg-accent-teal/10",
   },
 ];
 
@@ -45,32 +54,25 @@ export default function Stats() {
       <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/5 via-transparent to-transparent" />
 
       <div className="relative max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-          {stats.map((stat, i) => (
+        <InViewStagger className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4" staggerDelay={0.12}>
+          {stats.map((stat) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15, duration: 0.6 }}
-              viewport={{ once: true, margin: "-50px" }}
+              variants={inViewChildVariants}
               className="flex flex-col items-center text-center"
             >
               <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{
-                  delay: i * 0.15 + 0.2,
-                  type: "spring",
-                  stiffness: 200,
+                variants={{
+                  hidden: { scale: 0, opacity: 0 },
+                  visible: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 200 } },
                 }}
-                viewport={{ once: true }}
-                className="w-14 h-14 rounded-2xl bg-accent-blue/10 flex items-center justify-center mb-4"
+                className={`w-14 h-14 rounded-2xl ${stat.iconBg} flex items-center justify-center mb-4`}
               >
-                <stat.icon size={28} className="text-accent-blue" />
+                <stat.icon size={28} className={stat.iconColor} />
               </motion.div>
 
               <span className="text-3xl md:text-4xl font-bold text-text-primary mb-2">
-                <CountAnimation
+                <SlidingNumber
                   value={stat.value}
                   prefix={stat.prefix}
                   suffix={stat.suffix}
@@ -81,7 +83,7 @@ export default function Stats() {
               <span className="text-sm text-text-muted">{stat.label}</span>
             </motion.div>
           ))}
-        </div>
+        </InViewStagger>
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { BASE_PATH } from "@/lib/utils";
 import {
@@ -9,6 +8,9 @@ import {
   IconPaw,
   IconHeart,
 } from "@tabler/icons-react";
+import { InView, inViewScale } from "@/components/ui/in-view";
+import { SparklesText } from "@/components/ui/sparkles-text";
+import { motion } from "framer-motion";
 
 export default function CTAFooter() {
   return (
@@ -21,25 +23,23 @@ export default function CTAFooter() {
         </div>
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
+          <InView variants={inViewScale} transition={{ duration: 0.7 }}>
+            <InView
+              variants={{
+                hidden: { scale: 0, opacity: 0 },
+                visible: { scale: 1, opacity: 1 },
+              }}
               transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-              viewport={{ once: true }}
               className="w-16 h-16 mx-auto rounded-2xl bg-accent-blue/10 flex items-center justify-center mb-8"
             >
-              <IconPaw size={32} className="text-accent-blue" />
-            </motion.div>
+              <IconPaw size={32} className="text-accent-sky" />
+            </InView>
 
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Tu mascota merece{" "}
-              <span className="text-gradient">viajar a tu lado</span>
+              <SparklesText colors={["#38B6FF", "#00BF63", "#0097B2"]} sparklesCount={6}>
+                <span className="text-gradient">viajar a tu lado</span>
+              </SparklesText>
             </h2>
 
             <p className="text-text-muted text-lg mb-10 max-w-xl mx-auto">
@@ -54,7 +54,7 @@ export default function CTAFooter() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-green-500/25"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent-green hover:brightness-110 text-white font-semibold rounded-xl transition-all shadow-lg shadow-accent-green/25"
               >
                 <motion.span
                   animate={{ scale: [1, 1.2, 1] }}
@@ -71,13 +71,13 @@ export default function CTAFooter() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-accent-blue/30 text-accent-blue hover:bg-accent-blue/10 font-semibold rounded-xl transition-colors"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-accent-blue/30 text-accent-sky hover:bg-accent-blue/10 font-semibold rounded-xl transition-colors"
               >
                 <IconBrandInstagram size={22} />
                 Siguenos en Instagram
               </motion.a>
             </div>
-          </motion.div>
+          </InView>
         </div>
       </section>
 
@@ -127,7 +127,7 @@ export default function CTAFooter() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-sm text-text-muted hover:text-accent-blue transition-colors"
+                      className="text-sm text-text-muted hover:text-accent-sky transition-colors"
                     >
                       {link.name}
                     </a>
@@ -146,17 +146,17 @@ export default function CTAFooter() {
                   href="https://wa.me/523334056022"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-green-400 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent-green transition-colors"
                 >
                   <IconBrandWhatsapp size={18} />
                   33 3405 6022
                 </a>
                 <br />
                 <a
-                  href="https://wa.me/5255473311​12"
+                  href="https://wa.me/525547331112"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-green-400 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent-green transition-colors"
                 >
                   <IconBrandWhatsapp size={18} />
                   55 4733 1112
@@ -166,7 +166,7 @@ export default function CTAFooter() {
                 href="https://www.instagram.com/travelblueascendio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent-blue transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent-sky transition-colors"
               >
                 <IconBrandInstagram size={18} />
                 @travelblueascendio

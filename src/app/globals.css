@@ -3,12 +3,13 @@
 :root {
   --bg-primary: #0a0f1a;
   --bg-card: #111827;
-  --accent-blue: #3b82f6;
-  --accent-sky: #38bdf8;
-  --accent-green: #10b981;
+  --accent-blue: #004AAD;
+  --accent-sky: #38B6FF;
+  --accent-green: #00BF63;
+  --accent-teal: #0097B2;
   --text-primary: #f8fafc;
   --text-muted: #94a3b8;
-  --warm-brown: #92400e;
+  --warm-brown: #68441F;
 }
 
 @theme inline {
@@ -17,6 +18,7 @@
   --color-accent-blue: var(--accent-blue);
   --color-accent-sky: var(--accent-sky);
   --color-accent-green: var(--accent-green);
+  --color-accent-teal: var(--accent-teal);
   --color-text-primary: var(--text-primary);
   --color-text-muted: var(--text-muted);
   --color-warm-brown: var(--warm-brown);
@@ -99,7 +101,7 @@ html.lenis, html.lenis body {
   background: rgba(17, 24, 39, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(0, 74, 173, 0.15);
 }
 
 /* Text gradient */
@@ -112,7 +114,17 @@ html.lenis, html.lenis body {
 
 /* Glow effect */
 .glow-blue {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 30px rgba(0, 74, 173, 0.3), 0 0 60px rgba(56, 182, 255, 0.1);
+}
+
+/* Breathing ring for hero circle */
+@keyframes breathe-ring {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(0,74,173,0.3), 0 0 30px rgba(56,182,255,0.1), 0 0 60px rgba(0,74,173,0.05);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(56,182,255,0.4), 0 0 40px rgba(56,182,255,0.2), 0 0 80px rgba(0,74,173,0.1);
+  }
 }
 
 /* Scroll progress bar */

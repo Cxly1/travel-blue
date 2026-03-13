@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { IconX, IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { BASE_PATH } from "@/lib/utils";
+import { InView, InViewStagger } from "@/components/ui/in-view";
 
 const images = [
   { src: `${BASE_PATH}/images/clientes/1.jpeg`, alt: "Perro sonriendo en asiento de avion Viva" },
@@ -28,12 +29,7 @@ export default function Gallery() {
   return (
     <section id="galeria" className="relative py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <InView className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent-green/10 text-accent-green text-sm font-medium mb-4">
             Galeria
           </span>
@@ -41,17 +37,17 @@ export default function Gallery() {
             Ellos ya viajan con sus{" "}
             <span className="text-gradient">mejores amigos</span>
           </h2>
-        </motion.div>
+        </InView>
 
         {/* Masonry grid */}
-        <div className="columns-2 md:columns-3 gap-4 space-y-4">
+        <InViewStagger className="columns-2 md:columns-3 gap-4 space-y-4" staggerDelay={0.08}>
           {images.map((img, i) => (
             <motion.div
               key={img.src}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
-              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.9, filter: "blur(4px)" },
+                visible: { opacity: 1, scale: 1, filter: "blur(0px)", transition: { duration: 0.5 } },
+              }}
               className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded-xl"
               onClick={() => setLightbox(i)}
             >
@@ -67,7 +63,7 @@ export default function Gallery() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </InViewStagger>
       </div>
 
       {/* Lightbox */}

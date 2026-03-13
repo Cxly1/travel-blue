@@ -7,6 +7,7 @@ import Lenis from "lenis";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
+import ClientSlider from "@/components/sections/ClientSlider";
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
@@ -52,6 +53,7 @@ export default function Home() {
       <main>
         <Hero />
         <Stats />
+        <ClientSlider />
         <About />
         <Services />
         <Process />

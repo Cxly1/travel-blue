@@ -8,6 +8,7 @@ import {
   IconFileCertificate,
   IconPlane,
 } from "@tabler/icons-react";
+import { InView, InViewStagger, inViewChildVariants } from "@/components/ui/in-view";
 
 const steps = [
   {
@@ -16,8 +17,8 @@ const steps = [
     description:
       "Escribenos por WhatsApp y cuentanos sobre tu mascota y tu plan de viaje. Te asesoramos sin costo.",
     icon: IconBrandWhatsapp,
-    color: "text-green-400",
-    bg: "bg-green-400/10",
+    color: "text-accent-green",
+    bg: "bg-accent-green/10",
   },
   {
     number: "02",
@@ -43,8 +44,8 @@ const steps = [
     description:
       "Tu mascota viaja contigo en cabina. Sin importar raza, peso o tamano. Disfruten juntos cada aventura.",
     icon: IconPlane,
-    color: "text-accent-green",
-    bg: "bg-accent-green/10",
+    color: "text-accent-teal",
+    bg: "bg-accent-teal/10",
   },
 ];
 
@@ -60,19 +61,14 @@ export default function Process() {
   return (
     <section id="proceso" ref={containerRef} className="relative py-20 md:py-32 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <InView className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent-sky/10 text-accent-sky text-sm font-medium mb-4">
             Proceso simple
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Solo <span className="text-gradient">4 pasos</span> para viajar juntos
           </h2>
-        </motion.div>
+        </InView>
 
         {/* Progress bar */}
         <div className="relative mb-12 hidden md:block">
@@ -84,14 +80,14 @@ export default function Process() {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {steps.map((step, i) => (
+        <InViewStagger className="grid grid-cols-1 md:grid-cols-4 gap-6" staggerDelay={0.12}>
+          {steps.map((step) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15, duration: 0.6 }}
-              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+              }}
               className="glass rounded-2xl p-6 text-center relative group hover:border-accent-blue/20 transition-all"
             >
               <div
@@ -113,7 +109,7 @@ export default function Process() {
               </p>
             </motion.div>
           ))}
-        </div>
+        </InViewStagger>
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import {
   IconCertificate,
   IconUserCheck,
 } from "@tabler/icons-react";
+import { InView, InViewStagger, inViewChildVariants } from "@/components/ui/in-view";
 
 const services = [
   {
@@ -38,7 +39,7 @@ const services = [
 const colorMap = {
   blue: {
     bg: "bg-accent-blue/10",
-    text: "text-accent-blue",
+    text: "text-accent-sky",
     border: "border-accent-blue/20",
     glow: "group-hover:shadow-accent-blue/10",
   },
@@ -49,10 +50,10 @@ const colorMap = {
     glow: "group-hover:shadow-accent-green/10",
   },
   sky: {
-    bg: "bg-accent-sky/10",
-    text: "text-accent-sky",
-    border: "border-accent-sky/20",
-    glow: "group-hover:shadow-accent-sky/10",
+    bg: "bg-accent-teal/10",
+    text: "text-accent-teal",
+    border: "border-accent-teal/20",
+    glow: "group-hover:shadow-accent-teal/10",
   },
 };
 
@@ -60,31 +61,26 @@ export default function Services() {
   return (
     <section id="servicios" className="relative py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-blue/10 text-accent-blue text-sm font-medium mb-4">
+        <InView className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-blue/10 text-accent-sky text-sm font-medium mb-4">
             Nuestros servicios
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             La solucion perfecta para{" "}
             <span className="text-gradient">cada necesidad</span>
           </h2>
-        </motion.div>
+        </InView>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, i) => {
+        <InViewStagger className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.15}>
+          {services.map((service) => {
             const colors = colorMap[service.color];
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 40, rotateX: 10 }}
-                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
-                viewport={{ once: true }}
+                variants={{
+                  hidden: { opacity: 0, y: 40, scale: 0.95 },
+                  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+                }}
               >
                 <TiltCard
                   className={`group relative h-full p-6 md:p-8 rounded-2xl bg-bg-card border ${colors.border} hover:border-opacity-50 transition-all duration-300 hover:shadow-2xl ${colors.glow} cursor-default`}
@@ -110,7 +106,7 @@ export default function Services() {
                         className="flex items-center gap-2 text-sm text-text-muted"
                       >
                         <span
-                          className={`w-1.5 h-1.5 rounded-full ${colors.bg.replace("/10", "")} ${colors.text}`}
+                          className={`w-1.5 h-1.5 rounded-full ${colors.text}`}
                           style={{
                             backgroundColor: "currentColor",
                             opacity: 0.5,
@@ -131,7 +127,7 @@ export default function Services() {
               </motion.div>
             );
           })}
-        </div>
+        </InViewStagger>
       </div>
     </section>
   );

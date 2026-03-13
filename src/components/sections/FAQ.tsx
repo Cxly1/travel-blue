@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
+import { InView } from "@/components/ui/in-view";
 
 const faqItems = [
   {
@@ -52,21 +52,24 @@ export default function FAQ() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-blue/3 to-transparent" />
 
       <div className="relative max-w-3xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-blue/10 text-accent-blue text-sm font-medium mb-4">
+        <InView className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-blue/10 text-accent-sky text-sm font-medium mb-4">
             Preguntas frecuentes
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Resolvemos tus <span className="text-gradient">dudas</span>
           </h2>
-        </motion.div>
+        </InView>
 
-        <FAQAccordion items={faqItems} />
+        <InView
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <FAQAccordion items={faqItems} />
+        </InView>
       </div>
     </section>
   );
