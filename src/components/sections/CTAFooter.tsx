@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { BASE_PATH } from "@/lib/utils";
 import {
   IconBrandWhatsapp,
   IconBrandInstagram,
@@ -88,7 +89,7 @@ export default function CTAFooter() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <Image
-                  src="/images/logo.jpeg"
+                  src={`${BASE_PATH}/images/logo.jpeg`}
                   alt="Travel Blue Ascendio"
                   width={40}
                   height={40}

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, BASE_PATH } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 
@@ -62,7 +62,7 @@ export function FloatingNavbar({
         >
           <a href="#inicio" className="flex items-center gap-2 shrink-0">
             <Image
-              src="/images/logo.jpeg"
+              src={`${BASE_PATH}/images/logo.jpeg`}
               alt="Travel Blue Ascendio"
               width={36}
               height={36}

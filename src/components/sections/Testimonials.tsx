@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { BASE_PATH } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -9,35 +10,35 @@ const testimonials = [
       "Gracias a Travel Blue, mi pitbull viajo conmigo en cabina por primera vez. Nunca pense que fuera posible con un perro de su tamano. El proceso fue rapido y el certificado funciono sin ningun problema.",
     name: "Andrea M.",
     role: "Viajo con su pitbull a Cancun",
-    image: "/images/clientes/1.jpeg",
+    image: `${BASE_PATH}/images/clientes/1.jpeg`,
   },
   {
     quote:
       "Pense que era imposible llevar a mi gran danes en el avion. Travel Blue me demostro lo contrario. Mi perro viajo tranquilo a mi lado y el personal de la aerolinea acepto todo sin complicaciones.",
     name: "Carlos R.",
     role: "Viajo con su gran danes a CDMX",
-    image: "/images/clientes/4.jpeg",
+    image: `${BASE_PATH}/images/clientes/4.jpeg`,
   },
   {
     quote:
       "Mis dos chihuahuas ahora me acompanan a todos lados, no solo en vuelos sino tambien en restaurantes y hoteles. El certificado de servicio cambio nuestra vida por completo.",
     name: "Laura G.",
     role: "Viaja con sus chihuahuas a nivel nacional",
-    image: "/images/clientes/6.jpeg",
+    image: `${BASE_PATH}/images/clientes/6.jpeg`,
   },
   {
     quote:
       "Tenia mucho miedo de mandar a mi pastor aleman en la bodega del avion. Con el certificado de Travel Blue pudo viajar en cabina conmigo. Se porto increible y yo viaje tranquila.",
     name: "Sofia P.",
     role: "Viajo con su pastor aleman a Monterrey",
-    image: "/images/clientes/5.jpeg",
+    image: `${BASE_PATH}/images/clientes/5.jpeg`,
   },
   {
     quote:
       "El equipo de Travel Blue es super profesional. Me asesoraron en todo, desde el entrenamiento hasta los documentos que necesitaba. Mi dachshund ahora es un experto viajero.",
     name: "Roberto L.",
     role: "Viaja frecuentemente con su dachshund",
-    image: "/images/clientes/8.jpeg",
+    image: `${BASE_PATH}/images/clientes/8.jpeg`,
   },
 ];
 

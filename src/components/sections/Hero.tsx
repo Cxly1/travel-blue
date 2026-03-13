@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { IconPaw } from "@tabler/icons-react";
+import { BASE_PATH } from "@/lib/utils";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,7 +53,7 @@ export default function Hero() {
         className="absolute top-20 -left-10 md:left-16 w-32 h-40 md:w-48 md:h-60 rounded-2xl overflow-hidden opacity-40 md:opacity-50 rotate-[-8deg]"
       >
         <Image
-          src="/images/patronus.jpeg"
+          src={`${BASE_PATH}/images/patronus.jpeg`}
           alt="Patronus"
           fill
           className="object-cover"
@@ -64,7 +65,7 @@ export default function Hero() {
         className="absolute top-32 -right-5 md:right-20 w-28 h-36 md:w-40 md:h-52 rounded-2xl overflow-hidden opacity-40 md:opacity-50 rotate-[6deg]"
       >
         <Image
-          src="/images/clientes/2.jpeg"
+          src={`${BASE_PATH}/images/clientes/2.jpeg`}
           alt="Cliente feliz"
           fill
           className="object-cover"
@@ -76,7 +77,7 @@ export default function Hero() {
         className="absolute bottom-40 left-8 md:left-32 w-24 h-32 md:w-36 md:h-44 rounded-2xl overflow-hidden opacity-30 md:opacity-40 rotate-[4deg]"
       >
         <Image
-          src="/images/clientes/5.jpeg"
+          src={`${BASE_PATH}/images/clientes/5.jpeg`}
           alt="Cliente feliz"
           fill
           className="object-cover"
@@ -96,7 +97,7 @@ export default function Hero() {
           className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 ring-4 ring-accent-blue/30 shadow-2xl shadow-accent-blue/20"
         >
           <Image
-            src="/images/blue.jpeg"
+            src={`${BASE_PATH}/images/blue.jpeg`}
             alt="Blue - Pitbull viajero"
             fill
             className="object-cover"

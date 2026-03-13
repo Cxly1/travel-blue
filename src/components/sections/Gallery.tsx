@@ -4,16 +4,17 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { IconX, IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import { BASE_PATH } from "@/lib/utils";
 
 const images = [
-  { src: "/images/clientes/1.jpeg", alt: "Perro sonriendo en asiento de avion Viva" },
-  { src: "/images/clientes/2.jpeg", alt: "Chihuahua con chamarra rosa en ventana de avion" },
-  { src: "/images/clientes/3.jpeg", alt: "Beagle con chaleco de servicio en camioneta" },
-  { src: "/images/clientes/4.jpeg", alt: "Gran danes durmiendo en asientos de avion" },
-  { src: "/images/clientes/5.jpeg", alt: "Mujer con pastor aleman mirando ventana de avion" },
-  { src: "/images/clientes/6.jpeg", alt: "Chihuahuas con chaleco SERVICE DOG en avion" },
-  { src: "/images/clientes/7.jpeg", alt: "Dos perros de servicio en primera clase" },
-  { src: "/images/clientes/8.jpeg", alt: "Dachshund sentado en asiento de avion" },
+  { src: `${BASE_PATH}/images/clientes/1.jpeg`, alt: "Perro sonriendo en asiento de avion Viva" },
+  { src: `${BASE_PATH}/images/clientes/2.jpeg`, alt: "Chihuahua con chamarra rosa en ventana de avion" },
+  { src: `${BASE_PATH}/images/clientes/3.jpeg`, alt: "Beagle con chaleco de servicio en camioneta" },
+  { src: `${BASE_PATH}/images/clientes/4.jpeg`, alt: "Gran danes durmiendo en asientos de avion" },
+  { src: `${BASE_PATH}/images/clientes/5.jpeg`, alt: "Mujer con pastor aleman mirando ventana de avion" },
+  { src: `${BASE_PATH}/images/clientes/6.jpeg`, alt: "Chihuahuas con chaleco SERVICE DOG en avion" },
+  { src: `${BASE_PATH}/images/clientes/7.jpeg`, alt: "Dos perros de servicio en primera clase" },
+  { src: `${BASE_PATH}/images/clientes/8.jpeg`, alt: "Dachshund sentado en asiento de avion" },
 ];
 
 export default function Gallery() {

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { BASE_PATH } from "@/lib/utils";
 import {
   IconBrain,
   IconStethoscope,
@@ -127,7 +128,7 @@ export default function About() {
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-accent-blue/10">
               <Image
-                src="/images/blue.jpeg"
+                src={`${BASE_PATH}/images/blue.jpeg`}
                 alt="Blue - nuestro pitbull inspirador"
                 fill
                 className="object-cover"
@@ -160,7 +161,7 @@ export default function About() {
               className="absolute -top-4 -right-4 md:-right-8 w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden ring-4 ring-bg-primary shadow-xl"
             >
               <Image
-                src="/images/patronus.jpeg"
+                src={`${BASE_PATH}/images/patronus.jpeg`}
                 alt="Patronus - poodle viajero"
                 fill
                 className="object-cover"
