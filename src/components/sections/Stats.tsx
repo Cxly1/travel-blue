@@ -51,7 +51,7 @@ const stats = [
 export default function Stats() {
   return (
     <section className="relative py-20 md:py-28">
-      <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-warm-brown/5 via-transparent to-transparent" />
 
       <div className="relative max-w-6xl mx-auto px-6">
         <InViewStagger className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4" staggerDelay={0.12}>

@@ -51,7 +51,7 @@ export default function Hero() {
       {/* Background gradient with parallax */}
       <motion.div
         style={{ y: bgY }}
-        className="absolute inset-0 bg-gradient-to-b from-accent-blue/8 via-accent-sky/3 to-transparent will-change-transform"
+        className="absolute inset-0 bg-gradient-to-b from-warm-brown/8 via-accent-teal/3 to-transparent will-change-transform"
       />
 
       {/* Parallax floating images — solo Blue y Patronus */}
@@ -109,16 +109,16 @@ export default function Hero() {
         className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto pt-24 will-change-transform"
       >
         {/* Rising glow under circle */}
-        <div className="absolute top-24 md:top-16 w-64 h-64 md:w-80 md:h-80 bg-accent-sky/10 rounded-full blur-[80px] pointer-events-none animate-pulse" />
+        <div className="absolute top-24 md:top-16 w-64 h-64 md:w-80 md:h-80 bg-accent-teal/10 rounded-full blur-[80px] pointer-events-none animate-pulse" />
 
         {/* Central image with breathing glow ring */}
         <motion.div
           initial={{ clipPath: "circle(0% at 50% 50%)" }}
           animate={{ clipPath: "circle(50% at 50% 50%)" }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
-          className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 shadow-2xl shadow-accent-blue/20"
+          className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 shadow-2xl shadow-accent-teal/20"
           style={{
-            boxShadow: "0 0 0 4px rgba(0,74,173,0.3), 0 0 30px rgba(56,182,255,0.15), 0 0 60px rgba(0,74,173,0.1)",
+            boxShadow: "0 0 0 4px rgba(0,151,178,0.3), 0 0 30px rgba(56,182,255,0.15), 0 0 60px rgba(104,68,31,0.15)",
             animation: "breathe-ring 3s ease-in-out infinite",
           }}
         >
@@ -139,20 +139,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.8 + i * 0.1, duration: 0.6, ease: "easeOut" }}
-              className={`inline-block mr-3 ${
-                word === "mejor" || word === "contigo"
-                  ? "text-gradient"
-                  : ""
-              }`}
+              className="inline-block mr-3"
             >
-              {word === "mejor" ? (
+              {word === "mejor" || word === "amigo" ? (
                 <SparklesText colors={["#38B6FF", "#00BF63", "#0097B2"]} sparklesCount={6}>
-                  {word}
+                  <span className="text-gradient">{word}</span>
                 </SparklesText>
-              ) : word === "amigo" ? (
-                <SparklesText colors={["#38B6FF", "#00BF63", "#0097B2"]} sparklesCount={6}>
-                  {word}
-                </SparklesText>
+              ) : word === "contigo" ? (
+                <span className="text-gradient">{word}</span>
               ) : (
                 word
               )}
@@ -180,13 +174,13 @@ export default function Hero() {
         >
           <a
             href="#contacto"
-            className="px-8 py-4 bg-accent-blue hover:bg-accent-blue/90 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-accent-blue/25 hover:scale-105"
+            className="px-8 py-4 bg-accent-teal hover:bg-accent-teal/90 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-accent-teal/25 hover:scale-105"
           >
             Obtener Certificado
           </a>
           <a
             href="#proceso"
-            className="px-8 py-4 border border-accent-blue/30 text-accent-sky hover:bg-accent-blue/10 font-semibold rounded-xl transition-all"
+            className="px-8 py-4 border border-warm-brown/30 text-accent-sky hover:bg-warm-brown/10 font-semibold rounded-xl transition-all"
           >
             Conoce el proceso
           </a>

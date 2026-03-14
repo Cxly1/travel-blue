@@ -19,7 +19,7 @@ export default function CTAFooter() {
       <section id="contacto" className="relative py-20 md:py-32 overflow-hidden">
         {/* Glow effect */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[600px] h-[600px] bg-accent-blue/15 rounded-full blur-[120px]" />
+          <div className="w-[600px] h-[600px] bg-accent-teal/12 rounded-full blur-[120px]" />
         </div>
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
@@ -30,13 +30,13 @@ export default function CTAFooter() {
                 visible: { scale: 1, opacity: 1 },
               }}
               transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-              className="w-16 h-16 mx-auto rounded-2xl bg-accent-blue/10 flex items-center justify-center mb-8"
+              className="w-16 h-16 mx-auto rounded-2xl bg-accent-teal/10 flex items-center justify-center mb-8"
             >
-              <IconPaw size={32} className="text-accent-sky" />
+              <IconPaw size={32} className="text-accent-teal" />
             </InView>
 
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Tu mascota merece{" "}
+              Tu peludito merece{" "}
               <SparklesText colors={["#38B6FF", "#00BF63", "#0097B2"]} sparklesCount={6}>
                 <span className="text-gradient">viajar a tu lado</span>
               </SparklesText>
@@ -71,7 +71,7 @@ export default function CTAFooter() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-accent-blue/30 text-accent-sky hover:bg-accent-blue/10 font-semibold rounded-xl transition-colors"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-warm-brown/30 text-accent-sky hover:bg-warm-brown/10 font-semibold rounded-xl transition-colors"
               >
                 <IconBrandInstagram size={22} />
                 Siguenos en Instagram
@@ -172,7 +172,7 @@ export default function CTAFooter() {
                 @travelblueascendio
               </a>
 
-              <div className="mt-6 p-4 rounded-xl bg-bg-card/50 border border-accent-blue/5">
+              <div className="mt-6 p-4 rounded-xl bg-bg-card/50 border border-warm-brown/10">
                 <p className="text-xs text-text-muted leading-relaxed">
                   Grupo certificado con cedulas profesionales verificables.
                   Psiquiatra, Entrenador Profesional y Veterinario Titulado.

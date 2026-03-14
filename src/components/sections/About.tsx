@@ -71,10 +71,10 @@ export default function About() {
                 <InView
                   key={cred.title}
                   variants={inViewChildVariants}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-bg-card/50 border border-accent-blue/5 hover:border-accent-blue/15 transition-colors"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-bg-card/50 border border-warm-brown/10 hover:border-warm-brown/25 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center shrink-0">
-                    <cred.icon size={22} className="text-accent-sky" />
+                  <div className="w-10 h-10 rounded-lg bg-accent-teal/10 flex items-center justify-center shrink-0">
+                    <cred.icon size={22} className="text-accent-teal" />
                   </div>
                   <div>
                     <h4 className="text-text-primary font-semibold text-sm">
@@ -91,7 +91,7 @@ export default function About() {
 
           {/* Image side */}
           <InView variants={inViewSlideRight} transition={{ duration: 0.7, delay: 0.2 }} className="relative">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-accent-blue/10">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-warm-brown/15">
               <Image
                 src={`${BASE_PATH}/images/blue.jpeg`}
                 alt="Blue - nuestro pitbull inspirador"

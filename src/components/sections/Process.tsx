@@ -75,7 +75,7 @@ export default function Process() {
           <div className="h-1 bg-bg-card rounded-full" />
           <motion.div
             style={{ width: progressWidth }}
-            className="absolute top-0 left-0 h-1 rounded-full bg-gradient-to-r from-accent-blue via-accent-sky to-accent-green"
+            className="absolute top-0 left-0 h-1 rounded-full bg-gradient-to-r from-warm-brown via-accent-teal to-accent-green"
           />
         </div>
 
@@ -88,7 +88,7 @@ export default function Process() {
                 hidden: { opacity: 0, y: 40 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
               }}
-              className="glass rounded-2xl p-6 text-center relative group hover:border-accent-blue/20 transition-all"
+              className="glass rounded-2xl p-6 text-center relative group hover:border-warm-brown/20 transition-all"
             >
               <div
                 className={`w-14 h-14 mx-auto rounded-2xl ${step.bg} flex items-center justify-center mb-4`}
@@ -96,7 +96,7 @@ export default function Process() {
                 <step.icon size={28} className={step.color} />
               </div>
 
-              <span className="text-4xl font-bold text-bg-card/80 absolute top-3 right-4 group-hover:text-accent-blue/10 transition-colors">
+              <span className="text-4xl font-bold text-bg-card/80 absolute top-3 right-4 group-hover:text-warm-brown/10 transition-colors">
                 {step.number}
               </span>
 

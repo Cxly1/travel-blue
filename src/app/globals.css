@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #0a0f1a;
-  --bg-card: #111827;
+  --bg-primary: #0c0a08;
+  --bg-card: #1a1510;
   --accent-blue: #004AAD;
   --accent-sky: #38B6FF;
   --accent-green: #00BF63;
   --accent-teal: #0097B2;
-  --text-primary: #f8fafc;
-  --text-muted: #94a3b8;
+  --text-primary: #f5f0ea;
+  --text-muted: #a89a8a;
   --warm-brown: #68441F;
 }
 
@@ -64,7 +64,7 @@ html.lenis, html.lenis body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-blue);
+  background: var(--warm-brown);
   border-radius: 3px;
 }
 
@@ -93,20 +93,20 @@ html.lenis, html.lenis body {
   animation: float-paw linear infinite;
   opacity: 0;
   font-size: 1.2rem;
-  color: var(--accent-blue);
+  color: var(--warm-brown);
 }
 
 /* Glassmorphism */
 .glass {
-  background: rgba(17, 24, 39, 0.6);
+  background: rgba(26, 21, 16, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 74, 173, 0.15);
+  border: 1px solid rgba(104, 68, 31, 0.2);
 }
 
 /* Text gradient */
 .text-gradient {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-sky));
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-sky));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -114,16 +114,16 @@ html.lenis, html.lenis body {
 
 /* Glow effect */
 .glow-blue {
-  box-shadow: 0 0 30px rgba(0, 74, 173, 0.3), 0 0 60px rgba(56, 182, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 151, 178, 0.3), 0 0 60px rgba(56, 182, 255, 0.1);
 }
 
 /* Breathing ring for hero circle */
 @keyframes breathe-ring {
   0%, 100% {
-    box-shadow: 0 0 0 4px rgba(0,74,173,0.3), 0 0 30px rgba(56,182,255,0.1), 0 0 60px rgba(0,74,173,0.05);
+    box-shadow: 0 0 0 4px rgba(0,151,178,0.3), 0 0 30px rgba(56,182,255,0.1), 0 0 60px rgba(104,68,31,0.1);
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(56,182,255,0.4), 0 0 40px rgba(56,182,255,0.2), 0 0 80px rgba(0,74,173,0.1);
+    box-shadow: 0 0 0 6px rgba(0,191,99,0.35), 0 0 40px rgba(0,151,178,0.2), 0 0 80px rgba(104,68,31,0.12);
   }
 }
 
@@ -133,7 +133,7 @@ html.lenis, html.lenis body {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-sky), var(--accent-green));
+  background: linear-gradient(90deg, var(--warm-brown), var(--accent-teal), var(--accent-green));
   z-index: 9999;
   transform-origin: left;
 }

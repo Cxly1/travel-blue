@@ -49,11 +49,11 @@ const faqItems = [
 export default function FAQ() {
   return (
     <section id="faq" className="relative py-20 md:py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-blue/3 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-warm-brown/3 to-transparent" />
 
       <div className="relative max-w-3xl mx-auto px-6">
         <InView className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-blue/10 text-accent-sky text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-teal/10 text-accent-teal text-sm font-medium mb-4">
             Preguntas frecuentes
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">

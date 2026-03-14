@@ -56,7 +56,7 @@ export function FloatingNavbar({
           className={cn(
             "fixed top-4 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 z-[100] flex items-center justify-between px-4 py-3 rounded-2xl max-w-5xl mx-auto",
             scrolled
-              ? "bg-bg-card/80 backdrop-blur-xl border border-accent-blue/10 shadow-lg shadow-accent-blue/5"
+              ? "bg-bg-card/80 backdrop-blur-xl border border-warm-brown/15 shadow-lg shadow-warm-brown/5"
               : "bg-transparent"
           )}
         >
@@ -88,7 +88,7 @@ export function FloatingNavbar({
           <div className="flex items-center gap-3">
             <a
               href={ctaHref}
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-accent-blue hover:bg-accent-blue/90 rounded-xl transition-all hover:shadow-lg hover:shadow-accent-blue/25"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-accent-teal hover:bg-accent-teal/90 rounded-xl transition-all hover:shadow-lg hover:shadow-accent-teal/25"
             >
               {ctaText}
             </a>
@@ -121,7 +121,7 @@ export function FloatingNavbar({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="text-2xl font-semibold text-text-primary hover:text-accent-blue transition-colors"
+                className="text-2xl font-semibold text-text-primary hover:text-accent-teal transition-colors"
               >
                 {item.name}
               </motion.a>
@@ -132,7 +132,7 @@ export function FloatingNavbar({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navItems.length * 0.1 }}
-              className="mt-4 px-8 py-3 text-lg font-semibold text-white bg-accent-blue rounded-xl"
+              className="mt-4 px-8 py-3 text-lg font-semibold text-white bg-accent-teal rounded-xl"
             >
               {ctaText}
             </motion.a>

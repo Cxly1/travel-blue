@@ -38,10 +38,10 @@ const services = [
 
 const colorMap = {
   blue: {
-    bg: "bg-accent-blue/10",
-    text: "text-accent-sky",
-    border: "border-accent-blue/20",
-    glow: "group-hover:shadow-accent-blue/10",
+    bg: "bg-accent-teal/10",
+    text: "text-accent-teal",
+    border: "border-accent-teal/20",
+    glow: "group-hover:shadow-accent-teal/10",
   },
   green: {
     bg: "bg-accent-green/10",
@@ -62,7 +62,7 @@ export default function Services() {
     <section id="servicios" className="relative py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
         <InView className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-blue/10 text-accent-sky text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-warm-brown/10 text-warm-brown text-sm font-medium mb-4">
             Nuestros servicios
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">

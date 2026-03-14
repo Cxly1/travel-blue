@@ -23,7 +23,7 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.08 }}
             viewport={{ once: true }}
-            className="rounded-xl border border-accent-blue/10 bg-bg-card/50 overflow-hidden"
+            className="rounded-xl border border-warm-brown/10 bg-bg-card/50 overflow-hidden"
           >
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -35,7 +35,7 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
               <motion.span
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-accent-blue shrink-0"
+                className="text-accent-teal shrink-0"
               >
                 <IconChevronDown size={20} />
               </motion.span>
