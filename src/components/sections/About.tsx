@@ -47,22 +47,25 @@ export default function About() {
             </h2>
 
             <p className="text-text-muted leading-relaxed mb-4">
-              Somos un grupo certificado creado por un Psiquiatra, un Entrenador
-              y un Veterinario, todos con sus cedulas profesionales. Nuestra
-              mision nacio de una conviccion simple pero poderosa.
+              Travel Blue Ascendio nacio del amor profundo por los animales y de una
+              conviccion clara: ninguna mascota deberia sufrir al viajar separada de
+              su humano.
             </p>
 
             <p className="text-text-muted leading-relaxed mb-4">
-              Queremos ayudarte a viajar con tu mascota en la cabina de cualquier
-              transporte, sin importar la raza, el peso o el tamano, evitando que
-              sufran en el maletero &mdash; desde su perdida, asfixia, e incluso la
-              muerte.
+              Inspirados por Blue y Patronus, nuestros companeros de vida, entendimos
+              que para muchos animales viajar en el maletero de un transporte puede
+              representar estres, peligro e incluso poner en riesgo su vida. A partir
+              de esa experiencia decidimos crear una solucion que permitiera a las
+              personas viajar junto a sus mascotas de forma segura y digna.
             </p>
 
             <p className="text-text-primary font-medium leading-relaxed mb-8">
-              A traves de nuestros certificados de apoyo emocional o de servicio,
-              tu mascota puede acompanarte en aviones, trenes, autobuses, barcos
-              y mas &mdash; con validez nacional e internacional.
+              Por ello formamos Travel Blue Ascendio, un proyecto respaldado por un
+              equipo profesional compuesto por un Psiquiatra, un Entrenador y un
+              Veterinario, todos con sus respectivas cedulas profesionales. Creemos
+              que las mascotas no son equipaje, son familia, y merecen descubrir el
+              mundo al lado de quienes aman.
             </p>
 
             {/* Credential cards */}

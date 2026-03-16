@@ -13,6 +13,7 @@ import {
 } from "@tabler/icons-react";
 import { InView, InViewStagger, inViewChildVariants, inViewSlideLeft, inViewSlideRight } from "@/components/ui/in-view";
 import { motion } from "framer-motion";
+import { TextReveal } from "@/components/ui/text-reveal";
 
 const valores = [
   { icon: IconHeart, label: "Amor por los animales", color: "text-red-400" },
@@ -30,25 +31,26 @@ export default function MisionVision() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-warm-brown/[0.03] to-transparent pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6">
-        {/* Eslogan */}
-        <InView
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16 md:mb-20"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-teal/10 text-accent-teal text-sm font-medium mb-6">
-            <IconQuote size={16} />
-            Nuestro eslogan
-          </div>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary italic leading-snug max-w-3xl mx-auto">
-            &ldquo;Viajar juntos es su derecho,{" "}
-            <span className="text-gradient">hacerlo seguro</span>{" "}
-            es nuestra mision&rdquo;
-          </p>
-        </InView>
+        {/* Eslogan with text reveal */}
+        <div className="text-center mb-16 md:mb-20">
+          <InView
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-teal/10 text-accent-teal text-sm font-medium mb-6">
+              <IconQuote size={16} />
+              Nuestro eslogan
+            </div>
+          </InView>
+
+          <TextReveal
+            text="Viajar juntos es su derecho, hacerlo seguro es nuestra mision"
+            className="max-w-3xl mx-auto"
+          />
+        </div>
 
         {/* Misión y Visión cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 md:mb-20">

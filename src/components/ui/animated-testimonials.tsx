@@ -49,7 +49,7 @@ export function AnimatedTestimonials({
         <AnimatePresence>
           {testimonials.map((t, i) => (
             <motion.div
-              key={t.name}
+              key={i}
               initial={{ opacity: 0, scale: 0.9, rotate: randomRotations[i] }}
               animate={{
                 opacity: i === active ? 1 : 0.7,

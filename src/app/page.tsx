@@ -9,7 +9,7 @@ import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import About from "@/components/sections/About";
 import MisionVision from "@/components/sections/MisionVision";
-import ClientSlider from "@/components/sections/ClientSlider";
+
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import Gallery from "@/components/sections/Gallery";
@@ -56,7 +56,6 @@ export default function Home() {
         <Stats />
         <About />
         <MisionVision />
-        <ClientSlider />
         <Services />
         <Process />
         <Gallery />

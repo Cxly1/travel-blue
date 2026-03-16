@@ -1,61 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TiltCard } from "@/components/ui/tilt-card";
 import {
   IconHeartHandshake,
   IconCertificate,
   IconUserCheck,
+  IconArrowRight,
 } from "@tabler/icons-react";
-import { InView, InViewStagger, inViewChildVariants } from "@/components/ui/in-view";
+import { InView, InViewStagger } from "@/components/ui/in-view";
 
 const services = [
   {
     icon: IconHeartHandshake,
     title: "Certificado de Apoyo Emocional",
     description:
-      "Certificacion avalada por psiquiatra con cedula profesional. Valido para vuelos nacionales e internacionales en cualquier aerolinea. Tu mascota viaja en cabina contigo, sin importar su tamano.",
+      "Certificacion avalada por psiquiatra con cedula profesional. Valido para vuelos nacionales e internacionales en cualquier aerolinea.",
     features: ["Vuelos nacionales", "Vuelos internacionales", "Todas las razas"],
-    color: "blue" as const,
+    accent: "#0097B2",
+    accentClass: "text-accent-teal",
+    bgClass: "bg-accent-teal/8",
+    borderHover: "hover:border-accent-teal/30",
   },
   {
     icon: IconCertificate,
     title: "Certificado de Servicio",
     description:
-      "Acceso completo a restaurantes, hoteles, tiendas comerciales y todo tipo de transporte. Tu mascota te acompana a donde vayas con documentacion oficial verificable.",
+      "Acceso a restaurantes, hoteles, tiendas y todo tipo de transporte. Tu mascota te acompana con documentacion oficial verificable.",
     features: ["Restaurantes y hoteles", "Tiendas comerciales", "Transporte terrestre"],
-    color: "green" as const,
+    accent: "#00BF63",
+    accentClass: "text-accent-green",
+    bgClass: "bg-accent-green/8",
+    borderHover: "hover:border-accent-green/30",
   },
   {
     icon: IconUserCheck,
     title: "Asesoria Completa",
     description:
-      "Entrenamiento personalizado, documentacion completa y acompanamiento en todo el proceso. Te guiamos paso a paso para que tu mascota y tu viajen sin preocupaciones.",
+      "Entrenamiento personalizado, documentacion completa y acompanamiento en todo el proceso para que viajen sin preocupaciones.",
     features: ["Entrenamiento incluido", "Documentacion completa", "Soporte continuo"],
-    color: "sky" as const,
+    accent: "#38B6FF",
+    accentClass: "text-accent-sky",
+    bgClass: "bg-accent-sky/8",
+    borderHover: "hover:border-accent-sky/30",
   },
 ];
-
-const colorMap = {
-  blue: {
-    bg: "bg-accent-teal/10",
-    text: "text-accent-teal",
-    border: "border-accent-teal/20",
-    glow: "group-hover:shadow-accent-teal/10",
-  },
-  green: {
-    bg: "bg-accent-green/10",
-    text: "text-accent-green",
-    border: "border-accent-green/20",
-    glow: "group-hover:shadow-accent-green/10",
-  },
-  sky: {
-    bg: "bg-accent-teal/10",
-    text: "text-accent-teal",
-    border: "border-accent-teal/20",
-    glow: "group-hover:shadow-accent-teal/10",
-  },
-};
 
 export default function Services() {
   return (
@@ -72,61 +60,58 @@ export default function Services() {
         </InView>
 
         <InViewStagger className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.15}>
-          {services.map((service) => {
-            const colors = colorMap[service.color];
-            return (
-              <motion.div
-                key={service.title}
-                variants={{
-                  hidden: { opacity: 0, y: 40, scale: 0.95 },
-                  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
-                }}
+          {services.map((service) => (
+            <motion.div
+              key={service.title}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+              }}
+              className={`group relative p-6 md:p-8 rounded-2xl bg-bg-card/80 border border-warm-brown/8 ${service.borderHover} transition-all duration-300`}
+            >
+              {/* Icon */}
+              <div
+                className={`w-12 h-12 rounded-xl ${service.bgClass} flex items-center justify-center mb-5`}
               >
-                <TiltCard
-                  className={`group relative h-full p-6 md:p-8 rounded-2xl bg-bg-card border ${colors.border} hover:border-opacity-50 transition-all duration-300 hover:shadow-2xl ${colors.glow} cursor-default`}
-                >
-                  <div
-                    className={`w-14 h-14 rounded-2xl ${colors.bg} flex items-center justify-center mb-6`}
+                <service.icon size={24} className={service.accentClass} />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-bold text-text-primary mb-3">
+                {service.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-text-muted text-sm leading-relaxed mb-5">
+                {service.description}
+              </p>
+
+              {/* Features */}
+              <ul className="space-y-2 mb-6">
+                {service.features.map((feat) => (
+                  <li
+                    key={feat}
+                    className="flex items-center gap-2.5 text-sm text-text-muted"
                   >
-                    <service.icon size={28} className={colors.text} />
-                  </div>
+                    <span
+                      className="w-1 h-1 rounded-full shrink-0"
+                      style={{ backgroundColor: service.accent, opacity: 0.6 }}
+                    />
+                    {feat}
+                  </li>
+                ))}
+              </ul>
 
-                  <h3 className="text-xl font-bold text-text-primary mb-3">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-text-muted text-sm leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feat) => (
-                      <li
-                        key={feat}
-                        className="flex items-center gap-2 text-sm text-text-muted"
-                      >
-                        <span
-                          className={`w-1.5 h-1.5 rounded-full ${colors.text}`}
-                          style={{
-                            backgroundColor: "currentColor",
-                            opacity: 0.5,
-                          }}
-                        />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <a
-                    href="#contacto"
-                    className={`inline-flex items-center text-sm font-semibold ${colors.text} hover:underline`}
-                  >
-                    Mas informacion &rarr;
-                  </a>
-                </TiltCard>
-              </motion.div>
-            );
-          })}
+              {/* CTA */}
+              <a
+                href="#contacto"
+                className={`inline-flex items-center gap-1.5 text-sm font-medium ${service.accentClass} opacity-70 group-hover:opacity-100 transition-opacity`}
+              >
+                Mas informacion
+                <IconArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </motion.div>
+          ))}
         </InViewStagger>
       </div>
     </section>
